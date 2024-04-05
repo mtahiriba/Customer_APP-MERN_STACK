@@ -28,7 +28,7 @@ const Card = ({customer, isRerenderDashboard, setIsRerenderDashboard}) => {
 
   return (
     <div className='bg-white shadow-md flex justify-between items-center rounded-md pr-5'>
-      <img className='w-20 h-20 rounded-l-md' src="https://play-lh.googleusercontent.com/C9CAt9tZr8SSi4zKCxhQc9v4I6AOTqRmnLchsu1wVDQL0gsQ3fmbCVgQmOVM1zPru8UH=w240-h480-rw" alt="profile" />
+      <img className='w-20 h-20 rounded-l-md' src={`data:image/png;base64, ${customer.profilePic}`} alt="profile" />
       <span>{customer.userName}</span>
       <span>{customer.name}</span>
       <span>{customer.email}</span>

@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const getAllCustomers = () => {
+const getAllCustomers = (sortBy, order ) => {
   let headersList = {
     Accept: "*/*",
   };
 
   let reqOptions = {
-    url: "http://localhost:4000/api/customers?sortBy=username&order=desc",
+    url: `http://localhost:4000/api/customers?sortBy=${sortBy}&order=${order}`,
     method: "GET",
     headers: headersList,
   };

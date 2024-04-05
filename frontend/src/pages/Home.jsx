@@ -8,16 +8,21 @@ import {
   Button,
   Menu,
   Card,
+  HeaderBar
 } from "../components";
 
 const Home = () => {
   const [isAddCustomers, setIsAddCustomers] = useState(false);
   const [isRerenderDashboard, setIsRerenderDashboard] = useState(false);
   const [customers, setCustomers] = useState([]);
+  const [sorting, setSorting] = useState({
+    sortBy: "userName",
+    order: "desc"
+  })
 
   useEffect(() => {
     // fetch all customers
-    getAllCustomers()
+    getAllCustomers(sorting.sortBy, sorting.order)
       .then((res) => {
         toast.success("Customers fetched successfully");
         setCustomers(res.data.customers);
@@ -26,7 +31,7 @@ const Home = () => {
         toast.error("Failed to fetch customers");
         console.log(err);
       });
-  }, [isRerenderDashboard]);
+  }, [isRerenderDashboard, sorting]);
 
   return (
     <div className="flex bg-gray-100">
@@ -59,7 +64,9 @@ const Home = () => {
             </Button>
           </div>
 
-          <div className="flex flex-col h-[450px] gap-5 px-10 overflow-auto">
+          <HeaderBar sorting={sorting} setSorting={setSorting} />
+
+          <div className="flex flex-col h-[430px] gap-5 px-10 overflow-auto">
             {customers?.map((customer) => {
               return (
                 <Card

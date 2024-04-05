@@ -35,7 +35,7 @@ const CustomerForm = ({
         validate={(values) => validateCustomerForm(values)}
         onSubmit={(values, { setSubmitting }) => {
           if (!isEdit) {
-            // update the existing customer
+            // Create a new customer
             createCustomer(values)
               .then((res) => {
                 toast.success(res.data.message);
@@ -43,11 +43,10 @@ const CustomerForm = ({
                 modelClose();
               })
               .catch((err) => {
-                toast.error("Failed to update the customer");
-                console.log(err);
+                toast.error(err.response.data.message);
               });
           } else {
-            // Create a new customer
+            // update the existing customer
             updateCustomer(customer._id, values)  
               .then((res) => {
                 toast.success(res.data.message);
