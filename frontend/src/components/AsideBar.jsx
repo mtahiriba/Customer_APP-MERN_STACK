@@ -2,7 +2,7 @@ import React from "react";
 
 const AsideBar = () => {
   return (
-    <div className="bg-green-800 w-96 h-screen flex flex-col gap-20 px-10 py-10 items-center rounded-tr-2xl">
+    <div className="bg-green-800 w-96 h-screen hidden md:flex flex-col gap-20 px-10 py-10 items-center rounded-tr-2xl">
       <span className="text-white text-3xl">SAVIYNT</span>
       <button className="text-white bg-green-950 border shadow-md rounded-md py-2 px-5 w-full">
         <div className="flex px-3 gap-5">

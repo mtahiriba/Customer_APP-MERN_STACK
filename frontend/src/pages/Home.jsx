@@ -66,7 +66,7 @@ const Home = () => {
 
           <HeaderBar sorting={sorting} setSorting={setSorting} />
 
-          <div className="flex flex-col h-[430px] gap-5 px-10 overflow-auto">
+          <div className="flex flex-col h-[700px] sm:h-[430px] gap-5 px-10 overflow-auto">
             {customers?.map((customer) => {
               return (
                 <Card

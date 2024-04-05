@@ -44,22 +44,27 @@ const Card = ({ customer, isRerenderDashboard, setIsRerenderDashboard }) => {
   }, [deleteResponse]);
 
   return (
-    <div className="bg-white shadow-md flex justify-between items-center rounded-md pr-5">
+    <div className="bg-white shadow-md flex sm:gap-24 justify-between items-center rounded-md p-5 sm:pr-5 ">
       <img
         className="w-20 h-20 rounded-l-md"
         src={`data:image/png;base64, ${customer.profilePic}`}
         alt="profile"
       />
-      <span>{customer.userName}</span>
-      <span>{customer.name}</span>
-      <span>{customer.email}</span>
-      <div className="flex gap-5">
-        <ButtonVariants type="success" handler={handleEditClick}>
-          Edit
-        </ButtonVariants>
-        <ButtonVariants type="danger" handler={handleDeleteClick}>
-          Delete
-        </ButtonVariants>
+      <div className="sm:w-[100%] flex flex-col gap-3 sm:flex-row justify-between">
+        <div className="flex flex-col xl:flex-row justify-between xl:w-[500px] 2xl:w-[650px] ">
+          <span>{customer.userName}</span>
+          <span>{customer.name}</span>
+          <span>{customer.email}</span>
+        </div>
+        
+        <div className="flex gap-5">
+          <ButtonVariants type="success" handler={handleEditClick}>
+            Edit
+          </ButtonVariants>
+          <ButtonVariants type="danger" handler={handleDeleteClick}>
+            Delete
+          </ButtonVariants>
+        </div>
       </div>
 
       {/* Model for Edit a customer */}

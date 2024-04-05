@@ -20,8 +20,8 @@ const HeaderBar = ({sorting, setSorting}) => {
   };
 
   return (
-    <div className="mx-10 bg-green-300 py-3 rounded-md">
-      <div className="flex w-[60%] ml-[15%] gap-40 text-green-950">
+    <div className="hidden sm:block mx-10 bg-green-300 py-3 rounded-md">
+      <div className="flex justify-around w-full xl:w-[60%] xl:ml-[15%]  xl:gap-40 text-green-950">
         <div className="flex gap-3 items-center">
           <span className={`cursor-pointer ${sorting.sortBy === "userName" ? "font-bold" : "font-semibold"}`} onClick={() => handleSortByChange("userName")}>Username</span>
           <div className="flex flex-col">
