@@ -14,7 +14,7 @@ const upload = multer({ storage });
 router.post("/customers", upload.single('file'), CreateCustomer); // Create a new customer
 router.get("/customers", GetCustomers); // Get all customers
 router.get("/customers/:id", GetCustomer); // Get a single customer
-router.put("/customers/:id", UpdateCustomer); // Update a customer
+router.put("/customers/:id",  upload.single('file'), UpdateCustomer); // Update a customer
 router.delete("/customers/:id", DeleteCustomer); // Delete a customer
 
 module.exports = router;
