@@ -90,10 +90,6 @@ async function UpdateCustomer(req, res) {
   const file = req.file;
   const customerId = req.params.id;
 
-  console.log(customerData);
-  console.log(file);
-  console.log(customerId);
-
   try {
     // file required
     if (!file) {
