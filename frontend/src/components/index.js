@@ -9,3 +9,4 @@ export { default as ModelLayout } from './ModelLayout';
 export { default as CustomerForm } from './CustomerForm';
 export { default as Menu } from './Menu';
 export { default as ButtonVariants } from './ButtonVarients';
+export { default as ConformationModelLayout } from './ConformationModelLayout';
